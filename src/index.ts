@@ -30,3 +30,39 @@ const array2: Array<number> = [4, 5, 23, 18, 9, -5, 31];
 
 const mergedArray: Array<number> = merge(array1, array2);
 console.log(mergedArray);
+
+function checkWord(attempt: string, secret: string): string {
+
+    let temp: string = '';
+
+    for( let i = 0; i < 5; i += 1){
+        if(secret.includes(attempt[i])){
+
+            for( let j = 0; j < 5; j += 1){
+
+                if(i === j && attempt[i] === secret[j]){
+                    temp += 'c';
+                }
+                else if(!(i === j) && attempt[i] === secret[j])
+                {
+                    temp += 'p';
+                }
+                
+            }
+
+        }
+        else{
+            temp += 'a';
+        }
+    }
+
+    return temp;
+
+}
+
+const attempts = ['rains', 'shout', 'scope', 'spoke'];
+
+for (const word of attempts) {
+  const result = checkWord(word, 'spoke');
+  console.log(result);
+}
