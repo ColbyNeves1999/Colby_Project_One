@@ -26,7 +26,7 @@ function merge(arr1: Array<number>, arr2: Array<number>): Array<number> {
 
     return arr3;
 }
-
+//testing
 const array1: Array<number> = [18, 74, 88, 3];
 const array2: Array<number> = [4, 5, 23, 18, 9, -5, 31];
 
