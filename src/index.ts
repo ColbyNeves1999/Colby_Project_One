@@ -69,7 +69,7 @@ function checkWord(attempt: string, secret: string): string {
     }
 
     return temp;
-
+ 
 }
 
 //Lines 76-81 are code taken from project instructions;
