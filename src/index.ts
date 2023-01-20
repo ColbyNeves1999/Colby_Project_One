@@ -1,5 +1,14 @@
-//import { run } from "node:test";
+/*
+ *  index.ts
+ *  Project: First Exercise
+ *
+ *  Author: Colby Neves
+ *  Created on: Jan 17, 2023
+ */
 
+//Part 1: Array Merg
+
+//A function that takes two arrays and merges them into one singular array;
 function merge(arr1: Array<number>, arr2: Array<number>): Array<number> {
     
     const arr3: Array<number> = [];
@@ -26,21 +35,26 @@ function merge(arr1: Array<number>, arr2: Array<number>): Array<number> {
 
     return arr3;
 }
-//testing
+
+//Lines 39-44 are code taken from project instructions;
 const array1: Array<number> = [18, 74, 88, 3];
 const array2: Array<number> = [4, 5, 23, 18, 9, -5, 31];
 
 const mergedArray: Array<number> = merge(array1, array2);
 console.log(mergedArray);
 
+//Part 2: Wordle code
+
+//A function that compares a guess word to a secret word then prints letters;
 function checkWord(attempt: string, secret: string): string {
 
-    let temp: string = '';
+    let temp: string = ''; //string variable that's being returned.
 
-    for( let i = 0; i < 5; i += 1){
-        if(secret.includes(attempt[i])){
-            for( let j = 0; j < 5; j += 1){
-                if(i === j && attempt[i] === secret[j]){
+    for( let i = 0; i < 5; i += 1){ //Loops through word attempt(s);
+        if(secret.includes(attempt[i])){ //Checks that a letter is in secret
+            for( let j = 0; j < 5; j += 1){ //Loops through secret word;
+                //Determines if placement is correct and prints c or p
+                if(i === j && attempt[i] === secret[j]){ 
                     temp += 'c';
                 }
                 else if(!(i === j) && attempt[i] === secret[j])
@@ -58,6 +72,7 @@ function checkWord(attempt: string, secret: string): string {
 
 }
 
+//Lines 76-81 are code taken from project instructions;
 const attempts = ['rains', 'shout', 'scope', 'spoke'];
 
 for (const word of attempts) {
@@ -65,6 +80,7 @@ for (const word of attempts) {
   console.log(result);
 }
 
+//Data (lines 90-112) hardcoded from assignment but types were mine
 type Candidate = {
     name: string;
     vote: Array<number>;
@@ -146,6 +162,7 @@ for(let i = 0; i < 4; i += 1){
 
 }
 
+//Sorts the array from highest to lowest
 for(let i = 0; i < 4; i += 1){
     for(let j = 0; i < 4; i += 1){
         if(votePercent[j] > votePercent[i])
@@ -157,16 +174,18 @@ for(let i = 0; i < 4; i += 1){
     }
 }
 
+//Determines who won among the people in the array
 let winner: string = "";
 for(let i = 0; i < 4; i += 1){
 
     if(votePercent[i] > 50){
         winner = canArray[i].name;
-        i = 4;
+        i = 4; //Ends the loop early if someone gets >50 early on
     }
 
 }
 
+//Due to the sorting of the array, 
 if(winner === ""){
     console.log("It is a runnoff betweeen", canArray[0].name, "and", canArray[1].name, ".");
 }
