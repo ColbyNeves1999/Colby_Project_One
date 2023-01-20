@@ -185,7 +185,7 @@ for(let i = 0; i < 4; i += 1){
 
 }
 
-//Due to the sorting of the array, 
+//Due to the sorting of the array, if no one is >50 canArray[0] and [1] are chosen as runoffs
 if(winner === ""){
     console.log("It is a runnoff betweeen", canArray[0].name, "and", canArray[1].name, ".");
 }
