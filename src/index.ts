@@ -164,8 +164,8 @@ for(let i = 0; i < 4; i += 1){
 
 //Sorts the array from highest to lowest
 for(let i = 0; i < 4; i += 1){
-    for(let j = 0; i < 4; i += 1){
-        if(votePercent[j] > votePercent[i])
+    for(let j = 0; j < 4; j += 1){
+        if(votePercent[j] < votePercent[i])
         {
             let temp1: number = votePercent[j];
             votePercent[j] = votePercent[i];
